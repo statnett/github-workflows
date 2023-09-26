@@ -7,6 +7,9 @@ on:
       release-type:
         type: string
         default: simple
+      bump-minor-pre-major:
+        type: boolean
+        default: false
     secrets:
       STATNETT_BOT_APP_ID:
         required: true
@@ -28,6 +31,6 @@ jobs:
 
       - uses: google-github-actions/release-please-action@v3
         with:
-          bump-minor-pre-major: true
+          bump-minor-pre-major: ${{ inputs.bump-minor-pre-major }}
           release-type: ${{ inputs.release-type }}
           token: ${{ steps.token.outputs.token }}
