@@ -9,7 +9,7 @@ on:
         default: simple
       bump-minor-pre-major:
         type: boolean
-        default: false
+        default: true
     secrets:
       STATNETT_BOT_APP_ID:
         required: true
