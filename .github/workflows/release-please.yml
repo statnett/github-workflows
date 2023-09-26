@@ -1,0 +1,36 @@
+---
+name: Release Please
+
+on:
+  workflow_call:
+    inputs:
+      release-type:
+        type: string
+        default: simple
+      bump-minor-pre-major:
+        type: boolean
+        default: true
+    secrets:
+      STATNETT_BOT_APP_ID:
+        required: true
+      STATNETT_BOT_PRIVATE_KEY:
+        required: true
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - id: token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: ${{ secrets.STATNETT_BOT_APP_ID }}
+          private_key: ${{ secrets.STATNETT_BOT_PRIVATE_KEY }}
+
+      - uses: google-github-actions/release-please-action@v3
+        with:
+          bump-minor-pre-major: ${{ inputs.bump-minor-pre-major }}
+          release-type: ${{ inputs.release-type }}
+          token: ${{ steps.token.outputs.token }}
