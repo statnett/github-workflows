@@ -33,7 +33,12 @@ jobs:
           message: |
             Hey there and thank you for opening this pull request! :wave:
 
-            We require pull request titles to follow the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/) and it looks like your proposed title needs to be adjusted.
+            We require pull request titles to follow the
+            [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/)
+            and it looks like your proposed title needs to be adjusted.
+            While the specification does not require a specific casing, it recommends being consistent.
+            We use the pull request title in automated release changelog updates, and would like our
+            changelogs to look nice.
 
             Details:
 
