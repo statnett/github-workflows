@@ -8,7 +8,7 @@ on:
         type: string
         required: true
         description: |
-          The names of the container images you want to delete old versions for.
+          The names of the container images to delete old versions for.
           Takes one or several container image names as a comma separated list, and supports wildcards.
       cut-off:
         type: string
