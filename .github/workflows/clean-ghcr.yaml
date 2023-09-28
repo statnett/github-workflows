@@ -1,0 +1,32 @@
+---
+name: Delete Obsolete GHCR Images
+
+on:
+  workflow_call:
+    inputs:
+      image-names:
+        type: string
+        required: true
+        description: |
+          The names of the container images to delete old versions for.
+          Takes one or several container image names as a comma separated list, and supports wildcards.
+      cut-off:
+        type: string
+        default: A week ago UTC
+        description: The timezone-aware datetime you want to delete container versions that are older than.
+
+jobs:
+  clean-ghcr:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+    steps:
+      - name: Delete untagged container images according to cut-off
+        uses: snok/container-retention-policy@v2
+        with:
+          image-names: ${{ inputs.image-names }}
+          cut-off: ${{ inputs.cut-off }}
+          account-type: org
+          org-name: statnett
+          untagged-only: true
+          token: ${{ secrets.GITHUB_TOKEN }}
