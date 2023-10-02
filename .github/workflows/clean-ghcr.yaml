@@ -15,10 +15,11 @@ on:
         default: A week ago UTC
         description: The timezone-aware datetime you want to delete container versions that are older than.
     secrets:
-      STATNETT_BOT_APP_ID:
+      PAT:
         required: true
-      STATNETT_BOT_PRIVATE_KEY:
-        required: true
+        description: |
+          You need to pass a (classic) personal access token (PAT) with access to the container registry.
+          Specifically, you need to grant it the following scopes: read:packages and delete:packages.
 
 jobs:
   clean-ghcr:
@@ -26,12 +27,6 @@ jobs:
     permissions:
       packages: write
     steps:
-      - id: token
-        uses: tibdex/github-app-token@v1
-        with:
-          app_id: ${{ secrets.STATNETT_BOT_APP_ID }}
-          private_key: ${{ secrets.STATNETT_BOT_PRIVATE_KEY }}
-
       - name: Delete untagged container images according to cut-off
         uses: snok/container-retention-policy@v2
         with:
@@ -40,4 +35,6 @@ jobs:
           account-type: org
           org-name: statnett
           untagged-only: true
-          token: ${{ steps.token.outputs.token }}
+          # FIXME: Remove requirement for classic PAT when available
+          # See https://github.com/snok/container-retention-policy/issues/27
+          token: ${{ secrets.PAT }}
