@@ -24,12 +24,12 @@ jobs:
       pull-requests: write
     steps:
       - id: token
-        uses: tibdex/github-app-token@v1
+        uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a # v2.1.2
         with:
           app_id: ${{ secrets.STATNETT_BOT_APP_ID }}
           private_key: ${{ secrets.STATNETT_BOT_PRIVATE_KEY }}
 
-      - uses: google-github-actions/release-please-action@v3
+      - uses: google-github-actions/release-please-action@4c5670f886fe259db4d11222f7dff41c1382304d # v3.7.12
         with:
           bump-minor-pre-major: ${{ inputs.bump-minor-pre-major }}
           release-type: ${{ inputs.release-type }}
