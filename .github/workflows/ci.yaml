@@ -1,0 +1,24 @@
+---
+name: CI
+
+on:
+  pull_request: {}
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ci-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  lint-filenames:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
+      - uses: batista/lint-filenames@1b766f13475cbdd2df8f2b75d8afda9a48ce7d84 # v1.0.1
+        name: Validating .yaml file extension on all workflow files
+        with:
+          path: "./.github/workflows"
+          pattern: "\\.yaml$"
