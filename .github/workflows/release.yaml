@@ -25,11 +25,11 @@ jobs:
       - run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git tag --delete v${{ steps.release.outputs.major }} || true
-          git tag --delete v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }} || true
-          git push --delete origin v${{ steps.release.outputs.major }} || true
-          git push --delete origin v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }} || true
-          git tag -a v${{ steps.release.outputs.major }} -m "Release v${{ steps.release.outputs.major }}"
-          git tag -a v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }} -m "Release v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}"
-          git push origin v${{ steps.release.outputs.major }}
-          git push origin v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}
+          git tag --delete v${{ needs.release-please.outputs.major }} || true
+          git tag --delete v${{ needs.release-please.outputs.major }}.${{ needs.release-please.outputs.minor }} || true
+          git push --delete origin v${{ needs.release-please.outputs.major }} || true
+          git push --delete origin v${{ needs.release-please.outputs.major }}.${{ needs.release-please.outputs.minor }} || true
+          git tag -a v${{ needs.release-please.outputs.major }} -m "Release v${{ needs.release-please.outputs.major }}"
+          git tag -a v${{ needs.release-please.outputs.major }}.${{ needs.release-please.outputs.minor }} -m "Release v${{ needs.release-please.outputs.major }}.${{ needs.release-please.outputs.minor }}"
+          git push origin v${{ needs.release-please.outputs.major }}
+          git push origin v${{ needs.release-please.outputs.major }}.${{ needs.release-please.outputs.minor }}
