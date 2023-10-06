@@ -10,6 +10,9 @@ on:
       bump-minor-pre-major:
         type: boolean
         default: true
+      extra-files:
+        type: string
+        description: add extra-files to bump using the release-please generic updater
     secrets:
       STATNETT_BOT_APP_ID:
         required: true
@@ -54,5 +57,6 @@ jobs:
         uses: google-github-actions/release-please-action@4c5670f886fe259db4d11222f7dff41c1382304d # v3.7.12
         with:
           bump-minor-pre-major: ${{ inputs.bump-minor-pre-major }}
+          extra-files: ${{ inputs.extra-files }}
           release-type: ${{ inputs.release-type }}
           token: ${{ steps.token.outputs.token }}
