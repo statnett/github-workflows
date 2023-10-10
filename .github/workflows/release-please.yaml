@@ -1,6 +1,5 @@
 ---
 name: Release Please
-
 on:
   workflow_call:
     inputs:
@@ -35,8 +34,7 @@ on:
         description: sha that a GitHub release was tagged at
         value: ${{ jobs.release-please.outputs.sha }}
 
-permissions:
-  contents: read
+permissions: {}
 jobs:
   release-please:
     runs-on: ubuntu-latest
