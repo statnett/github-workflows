@@ -14,7 +14,8 @@ on:
     branches:
       - main
 
-permissions: {}
+permissions:
+  content: read
 jobs:
   analysis:
     name: Scorecard analysis
