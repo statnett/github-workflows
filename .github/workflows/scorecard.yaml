@@ -15,7 +15,7 @@ on:
       - main
 
 permissions:
-  content: read
+  contents: read
 jobs:
   analysis:
     name: Scorecard analysis
