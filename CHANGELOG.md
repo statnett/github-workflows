@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.3.0](https://github.com/statnett/github-workflows/compare/v0.2.0...v0.3.0) (2023-10-10)
+
+
+### Features
+
+* add reusable scorecard workflow ([#22](https://github.com/statnett/github-workflows/issues/22)) ([09472b5](https://github.com/statnett/github-workflows/commit/09472b511fbf37689f14e1dd1e3f57d4c19db24d))
+
+
+### Bug Fixes
+
+* content read by default ([#26](https://github.com/statnett/github-workflows/issues/26)) ([bc7d1d1](https://github.com/statnett/github-workflows/commit/bc7d1d182341432ad606b73e446824b12901eb77))
+* install newer Java if CodeQL run with Java ([#29](https://github.com/statnett/github-workflows/issues/29)) ([30e8f56](https://github.com/statnett/github-workflows/commit/30e8f56c940a7c0aa4f77ab67e8c1c433f6b0904))
+* no workflow default permissions ([#30](https://github.com/statnett/github-workflows/issues/30)) ([e4fac84](https://github.com/statnett/github-workflows/commit/e4fac84eba004c101651a7dac85ca2af716ede61))
+
 ## [0.2.0](https://github.com/statnett/github-workflows/compare/v0.1.0...v0.2.0) (2023-10-09)
 
 
