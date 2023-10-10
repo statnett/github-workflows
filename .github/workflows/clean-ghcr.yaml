@@ -1,6 +1,5 @@
 ---
 name: Delete Obsolete GHCR Images
-
 on:
   workflow_call:
     inputs:
@@ -21,8 +20,7 @@ on:
           You need to pass a (classic) personal access token (PAT) with access to the container registry.
           Specifically, you need to grant it the following scopes: read:packages and delete:packages.
 
-permissions:
-  contents: read
+permissions: {}
 jobs:
   clean-ghcr:
     runs-on: ubuntu-latest

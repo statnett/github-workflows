@@ -1,6 +1,5 @@
 ---
-name: "CodeQL"
-
+name: CodeQL
 on:
   workflow_call:
     inputs:
@@ -12,12 +11,11 @@ on:
           Use only 'java-kotlin' to analyze code written in Java, Kotlin or both.
           Use only 'javascript-typescript' to analyze code written in JavaScript, TypeScript or both.
           Learn more about CodeQL language support at https://aka.ms/codeql-docs/language-support
-
 concurrency:
   group: codeql-${{ github.head_ref || github.ref }}
   cancel-in-progress: true
-permissions:
-  contents: read
+
+permissions: {}
 jobs:
   analyze:
     name: Analyze

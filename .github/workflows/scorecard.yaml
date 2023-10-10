@@ -1,6 +1,5 @@
 ---
 name: Scorecard supply-chain security
-
 on:
   workflow_call: {}
   # For Branch-Protection check. Only the default branch is supported. See
@@ -14,8 +13,7 @@ on:
     branches:
       - main
 
-permissions:
-  contents: read
+permissions: {}
 jobs:
   analysis:
     name: Scorecard analysis
