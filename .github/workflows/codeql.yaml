@@ -40,7 +40,7 @@ jobs:
           # To support newer Java
           # CodeQL/GitHub uses Java 11 by default
           # See https://github.com/github/codeql-action/issues/825
-          java-version: 17
+          java-version: 21
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2
         with:
