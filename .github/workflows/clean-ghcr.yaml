@@ -28,7 +28,7 @@ jobs:
       packages: write
     steps:
       - name: Delete untagged container images according to cut-off
-        uses: snok/container-retention-policy@04c70fd030033036d69c0057e0d125bf25820544 # v2.1.2
+        uses: snok/container-retention-policy@3d27e6a0361deed0b7dc5099a82eadd07924b177 # v2.1.3
         with:
           image-names: ${{ inputs.image-names }}
           cut-off: ${{ inputs.cut-off }}
