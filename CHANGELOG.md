@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.1](https://github.com/statnett/github-workflows/compare/v0.3.0...v0.3.1) (2023-12-06)
+
+
+### Reverts
+
+* "chore(deps): update google-github-actions/release-please-action action to v4" ([#45](https://github.com/statnett/github-workflows/issues/45)) ([69d81b6](https://github.com/statnett/github-workflows/commit/69d81b6d2d711aff0bc0546e24d180ff80672ea2))
+
 ## [0.3.0](https://github.com/statnett/github-workflows/compare/v0.2.0...v0.3.0) (2023-10-10)
 
 
