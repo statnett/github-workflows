@@ -17,9 +17,9 @@ on:
       STATNETT_BOT_PRIVATE_KEY:
         required: true
     outputs:
-      releases_created:
+      release_created:
         description: true if the release was created, false otherwise
-        value: ${{ jobs.release-please.outputs.releases_created }}
+        value: ${{ jobs.release-please.outputs.release_created }}
       major:
         description: Number representing major semver value
         value: ${{ jobs.release-please.outputs.major }}
@@ -41,7 +41,7 @@ jobs:
       contents: write
       pull-requests: write
     outputs:
-      releases_created: ${{ steps.release.outputs.releases_created }}
+      release_created: ${{ steps.release.outputs.release_created }}
       major: ${{ steps.release.outputs.major }}
       minor: ${{ steps.release.outputs.minor }}
       patch: ${{ steps.release.outputs.patch }}
