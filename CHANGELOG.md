@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.4.0](https://github.com/statnett/github-workflows/compare/v0.3.1...v0.4.0) (2023-12-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove use of deprecationMessage (does not work) ([#52](https://github.com/statnett/github-workflows/issues/52))
+* migrate clean-ghcr workflow to use GH token ([#50](https://github.com/statnett/github-workflows/issues/50))
+
+### Features
+
+* add manifest-file input to release-please workflow ([#51](https://github.com/statnett/github-workflows/issues/51)) ([df7c32f](https://github.com/statnett/github-workflows/commit/df7c32f3e0c7ec927f00cc2ac39543ab91bb811d))
+* migrate clean-ghcr workflow to use GH token ([#50](https://github.com/statnett/github-workflows/issues/50)) ([8de53b8](https://github.com/statnett/github-workflows/commit/8de53b8af8d2156b3b98ca0c12f029666a0b2c75))
+
+
+### Bug Fixes
+
+* remove use of deprecationMessage (does not work) ([#52](https://github.com/statnett/github-workflows/issues/52)) ([b29384f](https://github.com/statnett/github-workflows/commit/b29384f2054633f63e93016dcfa8587aae4366cf))
+
 ## [0.3.1](https://github.com/statnett/github-workflows/compare/v0.3.0...v0.3.1) (2023-12-06)
 
 
