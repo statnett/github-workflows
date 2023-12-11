@@ -10,14 +10,6 @@ on:
         type: string
         description: path to the release-please versions manifest
         default: .release-please-manifest.json
-      bump-minor-pre-major:
-        type: boolean
-        default: true
-        deprecationMessage: should be specified in manifest-file
-      extra-files:
-        type: string
-        description: add extra-files to bump using the release-please generic updater
-        deprecationMessage: should be specified in manifest-file
     secrets:
       STATNETT_BOT_APP_ID:
         required: true
@@ -63,8 +55,6 @@ jobs:
       - id: release
         uses: google-github-actions/release-please-action@db8f2c60ee802b3748b512940dde88eabd7b7e01 # v3.7.13
         with:
-          bump-minor-pre-major: ${{ inputs.bump-minor-pre-major }}
-          extra-files: ${{ inputs.extra-files }}
           manifest-file: ${{ inputs.manifest-file }}
           release-type: ${{ inputs.release-type }}
           token: ${{ steps.token.outputs.token }}
