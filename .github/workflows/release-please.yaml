@@ -6,10 +6,10 @@ on:
       release-type:
         type: string
         default: simple
-      manifest-file:
+      config-file:
         type: string
-        description: path to the release-please versions manifest
-        default: .release-please-manifest.json
+        description: path to the release-please config in the repository
+        default: release-please-config.json
     secrets:
       STATNETT_BOT_APP_ID:
         required: true
@@ -55,6 +55,6 @@ jobs:
       - id: release
         uses: google-github-actions/release-please-action@a2d8d683f209466ee8c695cd994ae2cf08b1642d # v4.0.1
         with:
-          manifest-file: ${{ inputs.manifest-file }}
+          config-file: ${{ inputs.config-file }}
           release-type: ${{ inputs.release-type }}
           token: ${{ steps.token.outputs.token }}
