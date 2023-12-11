@@ -3,22 +3,10 @@ name: Delete Obsolete GHCR Images
 on:
   workflow_call:
     inputs:
-      image-names:
-        type: string
-        required: true
-        description: |
-          The names of the container images to delete old versions for.
-          Takes one or several container image names as a comma separated list, and supports wildcards.
       cut-off:
         type: string
         default: A week ago UTC
         description: The timezone-aware datetime you want to delete container versions that are older than.
-    secrets:
-      PAT:
-        required: true
-        description: |
-          You need to pass a (classic) personal access token (PAT) with access to the container registry.
-          Specifically, you need to grant it the following scopes: read:packages and delete:packages.
 
 permissions: {}
 jobs:
@@ -30,11 +18,10 @@ jobs:
       - name: Delete untagged container images according to cut-off
         uses: snok/container-retention-policy@b56f4ff7539c1f94f01e5dc726671cd619aa8072 # v2.2.1
         with:
-          image-names: ${{ inputs.image-names }}
+          image-names: ${{ github.event.repository.name }}
           cut-off: ${{ inputs.cut-off }}
           account-type: org
           org-name: statnett
           untagged-only: true
-          # FIXME: Remove requirement for classic PAT when available
-          # See https://github.com/snok/container-retention-policy/issues/27
-          token: ${{ secrets.PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          token-type: github-token
