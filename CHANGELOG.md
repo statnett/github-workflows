@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.1](https://github.com/statnett/github-workflows/compare/v0.4.0...v0.4.1) (2023-12-14)
+
+
+### Bug Fixes
+
+* don't use digests for CodeQL actions ([#66](https://github.com/statnett/github-workflows/issues/66)) ([3fd128f](https://github.com/statnett/github-workflows/commit/3fd128fd4def0f7938e90fc6f7f4fde8a3f45db3))
+* ensure CodeQL runs with correct Go version ([#64](https://github.com/statnett/github-workflows/issues/64)) ([4bad1b8](https://github.com/statnett/github-workflows/commit/4bad1b83045a36fee8a4b872312c720001f86a1d))
+
 ## [0.4.0](https://github.com/statnett/github-workflows/compare/v0.3.1...v0.4.0) (2023-12-11)
 
 
