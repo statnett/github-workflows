@@ -33,6 +33,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        if: ${{ inputs.language == 'go' }}
+        with:
+          # To support newer Go
+          # CodeQL/GitHub uses older Go (1.20?) by default
+          go-version-file: go.mod
       - uses: actions/setup-java@v4
         if: ${{ inputs.language == 'java' || inputs.language == 'java-kotlin' }}
         with:
