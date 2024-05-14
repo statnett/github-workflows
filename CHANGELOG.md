@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.2](https://github.com/statnett/github-workflows/compare/v0.4.1...v0.4.2) (2024-05-14)
+
+
+### Bug Fixes
+
+* use new project location for release-please-action ([#85](https://github.com/statnett/github-workflows/issues/85)) ([3f4c0ee](https://github.com/statnett/github-workflows/commit/3f4c0ee79d4647b99e5b296e97b771a79e4a9963))
+
 ## [0.4.1](https://github.com/statnett/github-workflows/compare/v0.4.0...v0.4.1) (2023-12-14)
 
 
