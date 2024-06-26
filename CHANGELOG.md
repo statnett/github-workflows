@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.3](https://github.com/statnett/github-workflows/compare/v0.4.2...v0.4.3) (2024-06-26)
+
+
+### Bug Fixes
+
+* snok/container-retention-policy cut-off param default after new major release ([#94](https://github.com/statnett/github-workflows/issues/94)) ([62453a2](https://github.com/statnett/github-workflows/commit/62453a266b6ee484964e87875aa2c10abb591121))
+* snok/container-retention-policy params after new major release ([#92](https://github.com/statnett/github-workflows/issues/92)) ([6a58bf9](https://github.com/statnett/github-workflows/commit/6a58bf94b2a61c49c9cfbd9817067b0b3848327a))
+
 ## [0.4.2](https://github.com/statnett/github-workflows/compare/v0.4.1...v0.4.2) (2024-05-14)
 
 
