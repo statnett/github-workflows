@@ -5,7 +5,7 @@ on:
     inputs:
       cut-off:
         type: string
-        default: A week ago UTC
+        default: 7days
         description: The timezone-aware datetime you want to delete container versions that are older than.
 
 permissions: {}
