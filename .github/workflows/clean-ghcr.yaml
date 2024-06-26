@@ -20,8 +20,6 @@ jobs:
         with:
           image-names: ${{ github.event.repository.name }}
           cut-off: ${{ inputs.cut-off }}
-          account-type: org
-          org-name: statnett
-          untagged-only: true
+          account: statnett
+          tag-selection: untagged
           token: ${{ secrets.GITHUB_TOKEN }}
-          token-type: github-token
