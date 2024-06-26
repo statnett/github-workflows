@@ -18,10 +18,8 @@ jobs:
       - name: Delete untagged container images according to cut-off
         uses: snok/container-retention-policy@4f22ef80902ad409ed55a99dc5133cc1250a0d03 # v3.0.0
         with:
+          account: statnett
           image-names: ${{ github.event.repository.name }}
           cut-off: ${{ inputs.cut-off }}
-          account-type: org
-          org-name: statnett
-          untagged-only: true
+          tag-selection: untagged
           token: ${{ secrets.GITHUB_TOKEN }}
-          token-type: github-token
