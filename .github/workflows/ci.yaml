@@ -15,7 +15,7 @@ jobs:
   lint-filenames:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938 # v4.2.0
+      - uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4.2.1
       - uses: batista/lint-filenames@d6b5131a8d409324b6daf71ead679b7fab6384e7 # v2.0.0
         name: Validating .yaml file extension on all workflow files
         with:
