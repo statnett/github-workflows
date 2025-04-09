@@ -38,7 +38,7 @@ jobs:
             changelogs to look nice.
 
             Details:
-            
+
             ```
             ${{ steps.lint_pr_title.outputs.error_message }}
             ```
