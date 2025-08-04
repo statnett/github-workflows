@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.4](https://github.com/statnett/github-workflows/compare/v0.4.3...v0.4.4) (2025-08-04)
+
+
+### Features
+
+* **lint-pr:** remove enforced subject pattern ([#116](https://github.com/statnett/github-workflows/issues/116)) ([615f701](https://github.com/statnett/github-workflows/commit/615f7011a604773311c530016a7a7c0bb30f0829))
+
 ## [0.4.3](https://github.com/statnett/github-workflows/compare/v0.4.2...v0.4.3) (2024-06-26)
 
 
