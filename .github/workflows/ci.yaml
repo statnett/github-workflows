@@ -16,8 +16,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      - uses: batista/lint-filenames@d6b5131a8d409324b6daf71ead679b7fab6384e7 # v2.0.0
-        name: Validating .yaml file extension on all workflow files
-        with:
-          path: "./.github/workflows"
-          pattern: "\\.yaml$"
+      - name: Validating .yaml file extension on all workflow files
+        run: |
+          invalid_files=$(find ./.github/workflows -type f ! -name "*.yaml")
+          if [ -n "$invalid_files" ]; then
+            echo "::error::The following files do NOT have the .yaml extension:"
+            echo "$invalid_files"
+            exit 1
+          fi
