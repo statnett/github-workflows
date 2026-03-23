@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.5](https://github.com/statnett/github-workflows/compare/v0.4.4...v0.4.5) (2026-03-23)
+
+
+### Bug Fixes
+
+* migrate tibdex/github-app-token -&gt; create-github-app-token ([2041070](https://github.com/statnett/github-workflows/commit/2041070ee153f854933dcb68fbbb771c5021a656))
+
 ## [0.4.4](https://github.com/statnett/github-workflows/compare/v0.4.3...v0.4.4) (2025-08-04)
 
 
